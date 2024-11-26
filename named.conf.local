@@ -1,0 +1,21 @@
+//
+// Do any local configuration here
+//
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+zone "privX.fit" {
+	type master;
+	file "/etc/bind/zones/db.privX.fit" ;
+	allow-transfer {192.168.55.88; 192.168.55.87;} ;
+	allow-query {any;};
+};
+
+zone "whatever.privX.fit" {
+	type master;
+	file "/etc/bind/zones/db.whatever.privX.fit";
+	allow-transfer {192.168.55.88; 192.168.55.87;} ;
+	allow-query {any;};
+
+};
